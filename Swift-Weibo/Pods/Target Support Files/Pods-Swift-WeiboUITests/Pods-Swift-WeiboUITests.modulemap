@@ -1,0 +1,6 @@
+framework module Pods_Swift_WeiboUITests {
+  umbrella header "Pods-Swift-WeiboUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
