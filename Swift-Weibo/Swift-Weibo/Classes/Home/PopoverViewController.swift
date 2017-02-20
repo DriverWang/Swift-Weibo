@@ -1,14 +1,14 @@
 //
-//  NullViewController.swift
-//  XMGWeibo
+//  PopoverViewController.swift
+//  Swift-Weibo
 //
-//  Created by 李南江 on 15/8/31.
-//  Copyright © 2015年 xiaomage. All rights reserved.
+//  Created by ihealth-wyc on 16/11/24.
+//  Copyright © 2016年 ihealth-wyc. All rights reserved.
 //
 
 import UIKit
 
-class NullViewController: UITableViewController {
+class PopoverViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class NullViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

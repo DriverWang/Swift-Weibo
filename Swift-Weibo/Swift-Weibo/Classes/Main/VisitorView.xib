@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VisitorView" customModule="Weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="386"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="zFb-8a-K8j"/>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="bZX-S1-uuz"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-2N-hWa">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="acr-MX-Ve6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAt-Jy-pf2">
+                    <state key="normal" title="注册"/>
+                    <connections>
+                        <action selector="RegisterBtnOnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="kJV-3x-bRv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ov-4K-etM">
+                    <state key="normal" title="登陆"/>
+                    <connections>
+                        <action selector="loginBtnOnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Djc-sm-bAM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Asi-2N-hWa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="340-ew-KBp"/>
+                <constraint firstItem="vAt-Jy-pf2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-40" id="3gR-o4-jNj"/>
+                <constraint firstItem="zFb-8a-K8j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="50l-ew-Kbd"/>
+                <constraint firstItem="zFb-8a-K8j" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EcB-9z-CYS"/>
+                <constraint firstItem="bZX-S1-uuz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OWK-FR-IaB"/>
+                <constraint firstItem="Asi-2N-hWa" firstAttribute="top" secondItem="zFb-8a-K8j" secondAttribute="bottom" constant="20" id="PyE-Ri-CXz"/>
+                <constraint firstItem="1Ov-4K-etM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="40" id="Uoc-yw-ZeL"/>
+                <constraint firstItem="1Ov-4K-etM" firstAttribute="top" secondItem="Asi-2N-hWa" secondAttribute="bottom" constant="8" id="o2O-Sx-prf"/>
+                <constraint firstItem="bZX-S1-uuz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tii-ZO-zqE"/>
+                <constraint firstItem="vAt-Jy-pf2" firstAttribute="top" secondItem="Asi-2N-hWa" secondAttribute="bottom" constant="8" id="zZX-09-1Ht"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="iconView" destination="bZX-S1-uuz" id="EZe-NX-cGe"/>
+                <outlet property="loginButton" destination="1Ov-4K-etM" id="q6q-Dv-4br"/>
+                <outlet property="registerButton" destination="vAt-Jy-pf2" id="aBN-ih-bfq"/>
+                <outlet property="rotationView" destination="zFb-8a-K8j" id="Ymu-18-OX7"/>
+                <outlet property="titleLabel" destination="Asi-2N-hWa" id="q8a-El-bJr"/>
+            </connections>
+            <point key="canvasLocation" x="36" y="-223"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="visitordiscover_feed_image_house" width="94" height="90"/>
+        <image name="visitordiscover_feed_image_smallicon" width="175" height="175"/>
+    </resources>
+</document>

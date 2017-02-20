@@ -15,12 +15,21 @@ class MainViewController: UITabBarController {
         
         tabBar.tintColor = UIColor.orange
         addChildViewControllers()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+        tabBar.addSubview(composeButton)
+
+        let rect = composeButton.frame
+        let width = tabBar.bounds.width / CGFloat(childViewControllers.count)
+        
+        composeButton.frame = CGRect(x: 2 * width , y: 0, width: width, height: rect.height)
     }
 
-    func addChildViewControllers()
-    
-    {
+    func addChildViewControllers(){
         guard let filePath = Bundle.main.path(forResource: "MainVCSettings.json", ofType: nil)
             else{
             return
@@ -46,9 +55,9 @@ class MainViewController: UITabBarController {
             
                 addChildViewController(childController: "HomeTableViewController", title: "首页", imageName: "tabbar_home")
                 addChildViewController(childController: "MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+                addChildViewController(childController: "NullViewController", title: "", imageName: "")
                 addChildViewController(childController: "DiscoverTableViewController", title: "发现", imageName: "tabbar_discover")
                 addChildViewController(childController: "ProfileTableViewController", title: "我", imageName: "tabbar_profile")
-            
         }
         
     }
@@ -86,4 +95,18 @@ class MainViewController: UITabBarController {
         addChildViewController(nav);
 
     }
+
+    @objc private func compseBtnClick() {
+        
+        
+    }
+    
+    lazy var composeButton:UIButton = {
+        
+        ()->UIButton
+        in
+        let btn = UIButton(imageName: "tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
+        btn.addTarget(self, action: #selector(compseBtnClick), for: .touchUpInside)
+        return btn
+    }()
 }
